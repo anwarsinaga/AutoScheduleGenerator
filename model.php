@@ -1,12 +1,4 @@
 <?php
-// koneksi ke database
-$connection = mysqli_connect('host', 'username', 'password', 'database');
-
-if (!$connection) {
-    die('Connection failed: ' . mysqli_connect_error());
-}
-echo 'Connected to database';
-
 // mengambil seluruh data kelas dari tabel kelas
 function getKelas()
 {
@@ -120,10 +112,4 @@ function generateJadwalSemuaKelas()
     $jadwal = fillJadwalWithGuru($jadwal, $hari, $timeSlot);
     return $jadwal;
 }
-
-$jadwalSemuaKelas = generateJadwalSemuaKelas();
-echo '<pre>';
-print_r($jadwalSemuaKelas);
-echo '</pre>';
-
 ?>
